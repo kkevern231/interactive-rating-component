@@ -8,46 +8,30 @@ function selected(rating) {
   //scoreSelectedElement.textContent = scoreMessage;
   switch (rating) {
     case 1:
-      const rate1 = document.getElementById("1");
-      rate1.classList.toggle("bg-medium-grey");
-      rate1.classList.toggle("bg-oggy");
-      rate1.classList.toggle("text-white");
+      rate1 = document.getElementById("1");
+      toggle(rate1);
       break;
 
     case 2:
-      const rate2 = document.getElementById("2");
-      rate2.classList.toggle("bg-medium-grey");
-      rate2.classList.toggle("bg-oggy");
-      rate2.classList.toggle("text-white");
+      rate2 = document.getElementById("2");
+      toggle(rate2);
       break;
 
     case 3:
-      const rate3 = document.getElementById("3");
-      rate3.classList.toggle("bg-medium-grey");
-      rate3.classList.toggle("bg-oggy");
-      rate3.classList.toggle("text-white");
+      rate3 = document.getElementById("3");
+      toggle(rate3);
       break;
 
     case 4:
-      const rate4 = document.getElementById("4");
-      rate4.classList.toggle("bg-medium-grey");
-      rate4.classList.toggle("bg-oggy");
-      rate4.classList.toggle("text-white");
+      rate4 = document.getElementById("4");
+      toggle(rate4);
       break;
 
     case 5:
-      const rate5 = document.getElementById("5");
-      rate5.classList.toggle("bg-medium-grey");
-      rate5.classList.toggle("bg-oggy");
-      rate5.classList.toggle("text-white");
+      rate5 = document.getElementById("5");
+      toggle(rate5);
       break;
-
-    //"pop" array slot that is != to rating
-    //Then loop function to reset classes.
   }
-}
-function submit() {
-  window.location.href = "./thank-you.html";
 }
 
 function passParam() {
@@ -58,6 +42,25 @@ function passParam() {
   para.append("message", scoreMessage);
 
   //GO
-  var url = "./thank-you.html?" + para.toString();
-  location.href = url;
+  url = "./thank-you.html?" + para.toString();
+  //location.href = url;
+}
+
+function submit() {
+  window.location.href = url;
+}
+
+function toggle(rating) {
+  //"pop" array slot that is != to rating
+  //Then loop function to reset classes.
+
+  // let array = [rate1, rate2, rate3, rate4, rate5];
+
+  // for (let i = 0; i < 5; i++) {
+  //   array[i] = rating.classList.toggle("bg-medium-grey");
+  // }
+
+  rating.classList.toggle("bg-medium-grey");
+  rating.classList.toggle("bg-oggy");
+  rating.classList.toggle("text-white");
 }
